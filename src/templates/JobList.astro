@@ -1,0 +1,30 @@
+---
+import { sortJobsByEndDate } from '@/utils/SortJobsByDate';
+
+const jobDescriptions = await Astro.glob('../pages/jobs/*.md');
+const sortedJobs = sortJobsByEndDate(jobDescriptions);
+---
+
+{sortedJobs.map(({ frontmatter, Content }) => (
+  <div class="mb-4">
+    <div class="mb-2 flex items-center">
+      <img
+        src={frontmatter.imgSrc}
+        alt={frontmatter.company}
+        class="mr-3 h-8 w-8"
+      />
+      <div class="grow">
+        <h3 class="text-lg font-semibold">{frontmatter.title}</h3>
+        <p class="text-gray-500">
+          {frontmatter.company} • {frontmatter.location}
+        </p>
+      </div>
+      <span class="text-xs  text-gray-500">
+        {frontmatter.startDate} - {frontmatter.endDate}
+      </span>
+    </div>
+    <div class="prose my-4 ml-5 list-disc space-y-2 text-gray-600">
+      <Content />
+    </div>
+  </div>
+))}

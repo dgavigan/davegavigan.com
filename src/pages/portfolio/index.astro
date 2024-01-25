@@ -1,0 +1,41 @@
+---
+import { ProjectCard } from '@/partials/ProjectCard';
+import Base from '@/templates/Base.astro';
+
+const projectsMarkdown = (await Astro.glob('./*.md')) as any[];
+const head = {
+  title: 'My Portfolio',
+  description: `Work I've done in the past!`,
+};
+---
+
+<Base head={head}>
+  <!-- Toolbar -->
+  <header class='bg-white shadow'>
+    <nav class='container mx-auto flex justify-start p-4'>
+      <a href='/' class='mx-4 text-lg text-gray-700 hover:text-gray-900'
+        >Resume
+      </a>
+      <a
+        href='/portfolio/'
+        class='mx-4 text-lg text-gray-700 hover:text-gray-900'
+        >Portfolio
+      </a>
+    </nav>
+  </header>
+
+  <!-- Page Content -->
+  <main class='container mx-auto p-4'>
+    <h2 class='my-6 text-center text-2xl font-bold'>
+      Take a look at some of my previous projects and work items
+    </h2>
+
+    <div class='container mx-auto p-4'>
+      <div class='grid gap-4 md:grid-cols-2 lg:grid-cols-4'>
+        {projectsMarkdown.map((markdownInstance) => (
+          <ProjectCard instance={markdownInstance} />
+        ))}
+      </div>
+    </div>
+  </main>
+</Base>

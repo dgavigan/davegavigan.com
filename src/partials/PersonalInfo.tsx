@@ -8,8 +8,13 @@ const PersonalInfo = () => (
     </div>
 
     <div className="flex justify-between border-b border-gray-200 py-2">
-      <span className="font-semibold">Experience</span>
+      <span className="font-semibold">Developer Experience</span>
       <span>10+ years</span>
+    </div>
+
+    <div className="flex justify-between border-b border-gray-200 py-2">
+      <span className="font-semibold">Leadership Experience</span>
+      <span>5 years</span>
     </div>
 
     <div className="flex justify-between border-b border-gray-200 py-2">

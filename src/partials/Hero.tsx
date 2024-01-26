@@ -44,6 +44,14 @@ const Hero = () => (
           </nav>
         </div>
       </div>
+      <div className="flex justify-end space-x-4 p-4 text-lg">
+        
+        <a href="https://www.linkedin.com/in/davidgavigan" className="text-gray-500 hover:text-blue-500" title="LinkedIn">
+            <i className="fab fa-linkedin"></i>
+        </a>
+
+        
+    </div>
     </header>
   </Section>
 );

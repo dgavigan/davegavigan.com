@@ -15,7 +15,6 @@ imgSrc: '/assets/logos/helloextend_logo.jpeg'
 * Led technical initiatives to adopt Remix within the organization for key projects  
 
 
-<h4 class="text-center text-gray-600">Team Achievements</h4>
 
 <div class="flex flex-col sm:flex-row justify-between text-center">
   <div style="margin:5px">

@@ -2,9 +2,10 @@ import { useState } from 'react'
 
 const Skills = () => {
   const categories = [
-    {name: 'Frontend Development', subSkills: ['React', 'Angular', 'JavaScript', 'TypeScript']},
-    {name: 'Backend Development', subSkills: ['NodeJS', 'Express', 'Go','AWS Lamda', 'PostgreSQL', 'Cassandra', 'DynamoDB', 'MongoDB']},
-    {name: 'CI/CD & Infra', subSkills: ['Docker', 'Kafka', 'Serverless Architecture']}
+    {name: 'Frontend Development', subSkills: ['React', 'Angular', 'Ionic', 'React Native']},
+    {name: 'Backend Development', subSkills: ['NodeJS / Express', 'Go', 'PostgreSQL', 'Cassandra', 'DynamoDB', 'MongoDB']},
+    {name: 'CI/CD & Infra', subSkills: ['Docker', 'Kafka', 'JenkinsCI', 'Github Actions', 'AWS CDK', 'AWS Lamda']},
+    {name: 'Apps & Tools', subSkills: ['Datadog', 'Launchdarkly', 'LogRocket']}
   ]
   const [expanded, setExpanded] = useState<boolean[]>(Array(categories.length).fill(false));
 
@@ -15,8 +16,8 @@ const Skills = () => {
   };
 
   return (
-    <div className="mb-4 w-full rounded-lg bg-white p-6 shadow-md">
-      <div className="container mx-auto mt-4">
+    <div className="mb-4 w-full rounded-lg bg-white p-6 shadow-md sticky top-0">
+    <div className="container mx-auto mt-4">
       <div className="mb-4">
         <h2 className="text-xl font-semibold">Skills</h2>
       </div>
@@ -30,7 +31,11 @@ const Skills = () => {
               {category.name}
               <span className="float-right">{expanded[index] ? '-' : '+'}</span>
             </button>
-            <div className={`space-y-1 pl-4 ${expanded[index] ? '' : 'hidden'}`}>
+            <div
+              className={`space-y-1 pl-4 overflow-hidden ${
+                expanded[index] ? 'max-h-96' : 'max-h-0'
+              } transition-max-h ease-in-out duration-300`}
+            >
               {category.subSkills.map((subSkill, subIndex) => (
                 <div key={subIndex}>{subSkill}</div>
               ))}

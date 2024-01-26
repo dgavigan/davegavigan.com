@@ -9,7 +9,8 @@ imgSrc: '/assets/logos/sensorinsight.jpeg'
 
 ---
 
-* Led and mentored a distributed team of 8-10 developers building SensorInsight.io, an IoT platform  
-* Designed and implemented web application UI  
-* Routinely met with clients turning business requirements into technical specifications  
-* AngularJS, Java EE, MQTT, AWS EC2, Protractor E2E, Jasmine, JenkinsCI  
+* Led and mentored a distributed team of 8-10 developers building [SensorInsight.io](https://SensorInsight.io), an IoT platform  
+* Individually designed and implemented web application UI/UX  
+* Routinely met with executive leadership, turning business requirements into technical
+specifications for the engineering team    
+* AngularJS, Java EE, MQTT, AWS EC2, PostgreSQL  

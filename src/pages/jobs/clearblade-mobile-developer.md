@@ -11,4 +11,4 @@ imgSrc: '/assets/logos/clearblade_logo.png'
 
 * Modernized client legacy systems on IBM System Z mainframes  
 * Served as a cross platform mobile developer using early builds of Apache Cordova and AngularJS  
-* AngularJS, Jquery Mobile, Ionic, Go, JenkinsCI, React
+* AngularJS, Jquery Mobile, Ionic, Go, MQTT, React

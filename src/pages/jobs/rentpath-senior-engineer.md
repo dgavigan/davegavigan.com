@@ -9,7 +9,10 @@ imgSrc: '/assets/logos/rent_logo.jpeg'
 
 ---
 
-* Worked in a large team of developers building rent.com, a public facing site where performance was paramount. Built in React with TypeScript.  
-* Expected to be self motivated with a strong ability to produce production grade code  
-* Ruby on rails re-write leveraging feature flips and A/B Testing with an emphasis on SEO and web performance  
-* React, TypeScript, Redux, Redux Thunk, NodeJS, GraphQL, Jest & Nightwatch 
+* Developed high-performance features for rent.com using React and TypesScript in a
+dynamic team setting.  
+* Demonstrated self-motivation and excellence in delivering production-grade code within a
+fast-paced environment    
+* Contributed to a Ruby on Rails rewrite, implementing feature flips and A/B testing to
+optimize conversions and overall site performance    
+* React, TypeScript, NodeJS, GraphQL 

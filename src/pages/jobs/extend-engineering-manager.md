@@ -10,7 +10,7 @@ imgSrc: '/assets/logos/helloextend_logo.jpeg'
 ---
 
 * Led a team of 6 engineers, responsible of Extend’s merchant and internal admin clients to manage their warranty and protection programs  
-* Collaborated with various platform teams and leaders to support requested features and guest develop as needed  
+* Collaborated with various platform teams and product leaders to support requested features and guest develop as needed  
 * Assisted engineers to create measurable benchmarks for growth that were unique to their own strengths and weaknesses  
 * Led technical initiatives to adopt Remix within the organization for key projects  
 

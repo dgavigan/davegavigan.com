@@ -2,8 +2,8 @@
 layout: '@/templates/BaseProject.astro'
 title: "Rent.com"
 description: "Rent.com is a website offering millions of apartment listings across the country."
-technologies: ["Typescript", "React", "Jest", "Cypress", "NodeJS", "AWS Lambda"]
-date: "Aug 2022"
+technologies: ["Typescript", "React", "Jest", "NodeJS/Express","GraphQL"]
+date: "July 2019"
 imageSrc: "https://solutions.rent.com/wp-content/uploads/2022/11/Rent.-General-Social-Preview.jpg"
 ---
 
@@ -13,19 +13,19 @@ Rent.com, a leading online rental marketplace, underwent a significant transform
 
 
 ### Role: Senior Engineer
-As a Senior Engineer, I played a key role in this transition. My responsibilities included developing high-quality React components, integrating them with existing systems, and deploying them incrementally.
+As a Senior Engineer, I played a key role in this transition. My responsibilities included developing high-quality React components, integrating them with existing systems, and deploying them incrementally. My team and I also worked very closely with product to explore and implement variations of the site to optimze conversions .
 
 
 ### Technologies Used
 - React and TypeScript for the frontend
-- Ruby on Rails for the initial backend
-- Advanced feature flagging for controlled feature releases
-- A/B testing tools for performance optimization
+- Advanced feature flagging for controlled feature releases and A/B testing
+- Node/Express server delivering a GraphQL BFF API   
 
 
 ### Challenges & Solutions
 - **Incremental Deployment:** We utilized an industry approach known as "strangler fig pattern" or "incremental rewrite," where the new system gradually replaces parts of the old.
 - **Feature Management:** Heavily relied on feature flags to manage and test new features, ensuring seamless integration and user experience.
+- **Backend for Frontend:** The team owned and developed their own GraphQL API to encapsulate microservices, at times needing to develop entirely new featuresets with disparate data
 - **A/B Testing:** Implemented A/B testing to optimize features and improve SEO and web performance.
 
 

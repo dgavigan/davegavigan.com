@@ -18,6 +18,21 @@ const Recommendations = () => (
           </div>
         </blockquote>
 
+
+        <blockquote className="rounded bg-white p-4 shadow">
+          <p className="italic text-gray-600">
+            "Engineering managers are either good with people or skilled at 
+            building the software solutions. Dave shows that it's possible
+             to consistently do both at a high level. "
+          </p>
+          <div className="mt-2 text-right text-sm">
+            -{' '}
+            <a href="https://www.linkedin.com/in/james-sral/">
+              James Sral - Senior Engineer
+            </a>
+          </div>
+        </blockquote>
+
         <blockquote className="rounded bg-white p-4 shadow">
           <p className="italic text-gray-600">
             "Highly recommend David Gavigan in an engineering manager/leadership
@@ -30,6 +45,8 @@ const Recommendations = () => (
             </a>
           </div>
         </blockquote>
+
+      
       </div>
     </div>
   </section>

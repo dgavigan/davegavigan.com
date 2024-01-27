@@ -11,7 +11,7 @@ const Recomendation = (props: IRecommendation) => (
     </p>
     <div className="mt-2 text-right text-sm">
       -{' '}
-      <a href={`https://www.linkedin.com/in/${props.profile}/`}>
+      <a href={`https://www.linkedin.com/in/${props.profile}/`} target="_blank">
         {props.author}
       </a>
     </div>

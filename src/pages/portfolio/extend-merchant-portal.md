@@ -22,7 +22,7 @@ The portal, initially developed by contractors and junior engineers, suffered fr
 - The application was also unnecessarily complex and tedious being built with RTK Toolkit and Redux Sagas. These tools are fine but our application didn't require global state and was introducing complexity without the benifit. Moving into [Jotai](https://jotai.org/) for state managment and React Query simplified our state managment and networking layer
 
 ### Management Challenges and Strategies
-As a manager, I faced the challenge of leading a diverse team, including a wide range of high performing and underachieving engineers. My approach was:
+As a manager, I faced the challenge of leading a diverse team, including a wide range of engineers, some independently successfull and those who required more guidance. My approach was:
 - Personalized development plans to bridge skill gaps.
 - Creating a collaborative and engaging environment
 - Implementing team brown bags for peer learning and mentorship amongst the group.

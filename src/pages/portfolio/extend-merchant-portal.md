@@ -11,7 +11,7 @@ imageSrc: "https://cdn.shopify.com/app-store/listing_images/cddb0851cd8b0c58d565
 ### Project Overview
 [The Extend Merchant Portal](https://docs.extend.com/docs/merchant-portal) is a browser-based application designed for merchants to manage their warranty programs. Initially a basic tool, the project's goal was to elevate its featureset and performance while modernizing an aging codebase. This included adding advanced features like contract and claim management, and enterprise functionalities such as Okta Login/SSO.
 
-### My Role
+### Role: Staff Engineer / Engineering Manager
 As a Staff Web Engineer, I established best practices and provided guidance, serving as a tech lead. Recognized for my extensive technical expertise and leadership abilities, I was promoted by senior management to the role of Engineering Manager. In this capacity, I prioritized team development and upheld the technical excellence of our projects.
 
 ### Technical Challenges and Solutions

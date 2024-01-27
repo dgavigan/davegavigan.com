@@ -1,3 +1,5 @@
+import { Recomendation } from "./Recommendation";
+
 const Recommendations = () => (
   <section className="bg-gray-100">
     <div className="container mx-auto px-4 py-8">
@@ -5,18 +7,18 @@ const Recommendations = () => (
         What Others Say About Me
       </h2>
       <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
-        <blockquote className="rounded bg-white p-4 shadow">
-          <p className="italic text-gray-600">
-            "Dave built a great team and developed some of Extend's most
-            impactful B2B technologies! "
-          </p>
-          <div className="mt-2 text-right text-sm">
-            -{' '}
-            <a href="https://www.linkedin.com/in/lucasrgacek/">
-              Lucas Gacek - Product Leader
-            </a>
-          </div>
-        </blockquote>
+        <Recomendation 
+          recommendation="Dave built a great team and developed some of Extend's most
+          impactful B2B technologies!"
+          author="Lucas Gacek - Product Leader"
+          profile="lucasrgacek"
+        />
+
+        <Recomendation 
+          recommendation="Dave's exceptional leadership shows that it's possible to be both an outstanding manager and highly skilled engineer in one package"
+          author="Bill Hefty - Staff Engineer"
+          profile="lucasrgacek"
+        />
 
 
         <blockquote className="rounded bg-white p-4 shadow">

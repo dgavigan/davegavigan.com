@@ -10,8 +10,8 @@ imageSrc: "https://m.media-amazon.com/images/S/assets.wholefoodsmarket.com/conte
 ### Project Overview
 WFM Mobile was an initiative to modernize Whole Foods' inventory and replenishment processes by transitioning from older handheld devices to the newer HoneyWell CT47 models running on Android. This project was crucial for enhancing the efficiency of in-store operations.  
 
-### Your Role: Lead Web Engineer
-In my role as Lead Web Engineer, I was responsible for the frontend development of web applications and the integration with the native container application. Collaborating closely with my manager, who managed the C# and Xamarin components, I focused on ensuring seamless interaction between the web components and the native application.  
+### Role: Senoir Engineer
+In my role as Lead Web Engineer for the wfm mobile project, I was responsible for the frontend development of web applications and the integration with the native container application. Collaborating closely with my manager, who managed the C# and Xamarin components, I focused on ensuring seamless interaction between the web components and the native application.  
 
 ### Technologies Used
 - Android Operating System (for HoneyWell CT47)
@@ -29,9 +29,6 @@ In my role as Lead Web Engineer, I was responsible for the frontend development 
 
 ### Impact/Results
 The introduction of the universal component library significantly enhanced the consistency of user interfaces across different applications, thereby improving the overall user experience. The project led to a marked improvement in inventory management efficiency and accuracy, demonstrating the successful integration of diverse technologies and collaborative problem-solving.  
-
-### Visuals
-*(Optional: Relevant screenshots or visuals of the project or interface)*  
 
 ### Conclusion
 The WFM Mobile project exemplified a blend of technical innovation and collaborative spirit. My role not only involved addressing complex frontend challenges but also advocating for technological flexibility and standardization. This approach facilitated a harmonious working environment and contributed to the overall success of the project in streamlining Whole Foods' inventory processes.

@@ -2,7 +2,7 @@
 company: Extend
 title: Staff Engineer
 startDate: May 2022
-endDate: December 2023
+endDate: Dec 2023
 location: San Francisco, CA (Remote)
 empoymentType: Full Time
 imgSrc: '/assets/logos/helloextend_logo.jpeg'

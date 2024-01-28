@@ -1,8 +1,8 @@
 ---
 company: Whole Foods Market
 title: Senior Engineer
-startDate: July 2020
-endDate: July 2022
+startDate: Jul 2020
+endDate: Jul 2022
 location: Austin, TX
 empoymentType: Full Time
 imgSrc: '/assets/logos/wfm_logo.jpeg'

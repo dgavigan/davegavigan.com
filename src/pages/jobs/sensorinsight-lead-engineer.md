@@ -2,7 +2,7 @@
 company: SensorInsight
 title: Lead Engineer
 startDate: Feb 2014
-endDate: June 2017
+endDate: Jun 2017
 location: Houston, TX
 empoymentType: Full Time
 imgSrc: '/assets/logos/sensorinsight.jpeg'

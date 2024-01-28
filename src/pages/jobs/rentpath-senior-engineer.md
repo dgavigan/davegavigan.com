@@ -2,7 +2,7 @@
 company: Rent.com
 title: Senior Engineer
 startDate: Jan 2018
-endDate: July 2019
+endDate: Jul 2019
 location: Atlanta, GA (Contract)
 empoymentType: Contract
 imgSrc: '/assets/logos/rent_logo.jpeg'

@@ -1,7 +1,7 @@
 ---
 company: Independent Consulting
 title: Web & Mobile Engineer
-startDate: June 2017
+startDate: Jun 2017
 endDate: Jan 2018
 location: Houston, TX
 empoymentType: Contract

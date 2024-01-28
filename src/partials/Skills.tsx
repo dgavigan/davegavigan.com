@@ -16,7 +16,7 @@ const Skills = () => {
   };
 
   return (
-    <div className="mb-4 w-full rounded-lg bg-white p-6 shadow-md sticky top-0">
+    <div className="mb-4 w-full rounded-lg bg-white p-6 shadow-md sticky top-5 ">
     <div className="container mx-auto mt-4">
       <div className="mb-4">
         <h2 className="text-xl font-semibold">Skills</h2>

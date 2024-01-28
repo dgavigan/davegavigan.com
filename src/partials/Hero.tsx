@@ -50,6 +50,14 @@ const Hero = () => (
             <i className="fab fa-linkedin"></i>
         </a>
 
+        <a href="https://www.x.com/davegavigan" className="text-gray-500 hover:text-blue-500" title="LinkedIn">
+            <i className="fab fa-x-twitter"></i>
+        </a>
+
+        <a href="https://www.github.com/dgavigan" className="text-gray-500 hover:text-blue-500" title="Github">
+            <i className="fab fa-github"></i>
+        </a>
+
         
     </div>
     </header>

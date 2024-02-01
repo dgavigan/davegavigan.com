@@ -2,8 +2,8 @@
 layout: '@/templates/BaseProject.astro'
 title: "SensorInsight"
 description: "An IoT platform providing precision farming solutions for vineyards"
-technologies: ["Typescript", "React", "Jest", "Cypress", "NodeJS", "AWS Lambda"]
-date: "Aug 2022"
+technologies: ["AngularJS", "Java EE", "MQTT", "AWS EC2", "PostgreSQL"]
+date: "Aug 2017"
 imageSrc: "https://miro.medium.com/v2/resize:fit:1159/1*62S6bahu0g23UnXq5-4Jwg.png"
 projectURL: "https://sensorinsight.io"
 ---

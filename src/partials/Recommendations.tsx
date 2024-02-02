@@ -40,11 +40,17 @@ const Recommendations = () => (
           profile="aarondeane"
         />
 
-        <Recomendation
+        {/*<Recomendation
           recommendation="I highly recommend Dave as an Engineering Leader and Developer. He consistently demonstrates strong technical ability and strong people skills that make collaboration a joy"
           author="Daniel Bernal - DevOps & SRE"
           profile="danielubernal"
-          />
+        />*/}
+
+        <Recomendation 
+          recommendation="Dave makes working together easy, he is driven, considerate, and willing to work towards the best solution for everyone even when its not the easy one"
+          author="Heather Nelson - Software Architect/Engineer"
+          profile="hcnelson"
+        />
       
       </div>
     </div>

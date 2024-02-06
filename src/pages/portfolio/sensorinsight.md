@@ -12,6 +12,10 @@ projectURL: "https://sensorinsight.io"
 ### Project Overview
 [SensorInsight.io](https://sensorinsight.io) is an online platform that offers precision agricultural solutions, particularly focusing on vineyards. Initially a general IoT platform, it has evolved to provide specific services like water conservation, industrial and analytics software, solid-state sensor systems, and precision irrigation. The platform aids in detailed environmental and soil monitoring, delivering insights essential for optimizing vineyard growth, disease prevention, and yield potential.
 
+
+
+<iframe allowFullScreen src="https://drive.google.com/file/d/0B_SKXK177C_SSTBVS3hrUnhfUk0/preview?resourcekey=0-FOPovN7d6EblpyIOE_yzaQ" width="720" height="350" allow="autoplay"></iframe>
+
 ### Role: Lead Developer
 As an early engineer and lead developer, I was instrumental in the platform's development, particularly in the frontend. I managed and guided remote contractors, and mentoring engineers.
 

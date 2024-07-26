@@ -1,20 +1,20 @@
 ---
 company: Extend
 title: Engineering Manager
-startDate: May 2022
+startDate: Aug 2021
 endDate: Dec 2023
 location: San Francisco, CA (Remote)
 empoymentType: Full Time
-imgSrc: '/assets/logos/helloextend_logo.jpeg'
-
+imgSrc: "/assets/logos/helloextend_logo.jpeg"
 ---
 
-* Led a team of 6 engineers, responsible of Extend’s merchant and internal admin clients to manage their warranty and protection programs  
-* Collaborated with various platform teams and product leaders to support requested features and guest develop as needed  
-* Assisted engineers to create measurable benchmarks for growth that were unique to their own strengths and weaknesses  
-* Led technical initiatives to adopt Remix within the organization for key projects  
+_Hands-on technical leader setting standards of quality and best practices regarding front-end tooling_
 
-
+- Led a team of 6 fullstack engineers, responsible of Extend’s web clients to manage their warranty programs
+- Collaborated with various stakeholders to design and implement product roadmaps
+- Assisted engineers to create measurable benchmarks for growth that were unique to their own strengths and weaknesses
+- Led technical initiatives to adopt Remix within the organization for key projects
+- React, TypeScript, AWS, NodeJS, DynamoDB
 
 <div class="flex flex-col sm:flex-row justify-between text-center">
   <div style="margin:5px">
@@ -32,7 +32,3 @@ imgSrc: '/assets/logos/helloextend_logo.jpeg'
     <p>92nd percentile in defect resolution</p>
   </div>
 </div>
-
-
-
-

@@ -1,0 +1,289 @@
+// Prisma schema for Client Portal
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DATABASE_URL_UNPOOLED")
+}
+
+// ============ AUTH ============
+
+model User {
+  id            String    @id @default(cuid())
+  name          String?
+  email         String    @unique
+  emailVerified DateTime?
+  password      String?   // For credential auth
+  image         String?
+  role          String    @default("client") // admin, client
+  // Notification preferences (opt-out — default on)
+  notifyTimelineUpdate Boolean @default(true)
+  createdAt     DateTime  @default(now())
+  updatedAt     DateTime  @updatedAt
+
+  // Relations
+  accounts      Account[]
+  sessions      Session[]
+  clientOf      Client[]  @relation("ClientUsers")  // Keep for backwards compat
+  ownedClients  Client[]  @relation("ClientOwner")
+  clientMemberships ClientMember[]  // New role-based membership
+  comments      Comment[]
+  activities    Activity[]
+  proposalComments ProposalComment[]
+}
+
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?
+  access_token      String?
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+}
+
+// ============ BUSINESS ============
+
+model Client {
+  id        String   @id @default(cuid())
+  name      String
+  slug      String   @unique
+  email     String?
+  phone     String?
+  address   String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  ownerId   String?
+  owner     User?     @relation("ClientOwner", fields: [ownerId], references: [id])
+  users     User[]    @relation("ClientUsers")  // Keep for backwards compat during migration
+  members   ClientMember[]  // New role-based membership
+  projects  Project[]
+}
+
+// Client team membership with roles
+model ClientMember {
+  id        String   @id @default(cuid())
+  role      String   @default("viewer")  // owner, admin, viewer
+  createdAt DateTime @default(now())
+
+  // Relations
+  clientId  String
+  client    Client   @relation(fields: [clientId], references: [id], onDelete: Cascade)
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([clientId, userId])
+}
+
+model Project {
+  id          String   @id @default(cuid())
+  name        String
+  description String?
+  status      String   @default("pending") // pending, active, paused, completed, cancelled
+  progress    Int?     // 0-100, manually set by admin; null falls back to status heuristic
+  githubRepo  String?  // e.g. "dgavigan/booth-medical" for issue tracking
+  startDate   DateTime?
+  endDate     DateTime?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  clientId    String
+  client      Client       @relation(fields: [clientId], references: [id], onDelete: Cascade)
+  proposal    Proposal?    // 1:1 - each project has exactly one proposal
+  phases      Phase[]
+  invoices    Invoice[]
+  deliverables Deliverable[]
+  activities  Activity[]
+}
+
+model Proposal {
+  id          String   @id @default(cuid())
+  title       String
+  summary     String?
+  status      String   @default("draft") // draft, pending, accepted, declined, expired
+  validUntil  DateTime?
+  totalPrice  Int      // in cents
+  content     String   // JSON blob with full proposal details
+  signature   String?  // JSON blob with signature data {name, email, dataUrl, timestamp}
+  acceptedAt  DateTime?
+  revision    Int      @default(1)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations - 1:1 with Project
+  projectId   String   @unique
+  project     Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  revisions   ProposalRevision[]
+  comments    ProposalComment[]
+}
+
+model ProposalRevision {
+  id          String   @id @default(cuid())
+  revision    Int
+  title       String
+  summary     String?
+  totalPrice  Int
+  content     String
+  createdAt   DateTime @default(now())
+
+  // Relations
+  proposalId  String
+  proposal    Proposal @relation(fields: [proposalId], references: [id], onDelete: Cascade)
+}
+
+model ProposalComment {
+  id          String   @id @default(cuid())
+  text        String
+  revision    Int      // Track which revision the comment was made on
+  createdAt   DateTime @default(now())
+
+  // Relations
+  proposalId  String
+  proposal    Proposal @relation(fields: [proposalId], references: [id], onDelete: Cascade)
+  userId      String
+  user        User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+}
+
+model Phase {
+  id          String   @id @default(cuid())
+  name        String
+  description String?
+  status      String   @default("pending") // pending, in-progress, completed
+  order       Int      @default(0)
+  price       Int      @default(0) // in cents
+  hours       Int?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  projectId   String
+  project     Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  tasks       Task[]
+}
+
+model Task {
+  id          String   @id @default(cuid())
+  name        String
+  description String?
+  done        Boolean  @default(false)
+  order       Int      @default(0)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  phaseId     String
+  phase       Phase    @relation(fields: [phaseId], references: [id], onDelete: Cascade)
+}
+
+model Invoice {
+  id          String   @id @default(cuid())
+  number      String   @unique
+  status      String   @default("draft") // draft, sent, paid, overdue, cancelled
+  issueDate   DateTime @default(now())
+  dueDate     DateTime?
+  paidDate    DateTime?
+  subtotal    Int      @default(0) // in cents
+  tax         Int      @default(0)
+  total       Int      @default(0)
+  notes       String?
+  items       String   // JSON array of line items
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  projectId   String
+  project     Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
+}
+
+model Deliverable {
+  id          String   @id @default(cuid())
+  name        String
+  description String?
+  type        String   @default("file") // file, link, preview
+  url         String?
+  filePath    String?
+  status      String   @default("draft") // draft, ready, approved
+  phase       String?
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  projectId   String
+  project     Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
+}
+
+model Activity {
+  id          String   @id @default(cuid())
+  type        String   // proposal, update, comment, milestone, system
+  title       String
+  body        String?
+  metadata    String?  // JSON for extra data
+  createdAt   DateTime @default(now())
+
+  // Relations
+  projectId   String
+  project     Project  @relation(fields: [projectId], references: [id], onDelete: Cascade)
+  userId      String?
+  user        User?    @relation(fields: [userId], references: [id])
+  comments    Comment[]
+}
+
+model Comment {
+  id          String   @id @default(cuid())
+  body        String
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  // Relations
+  activityId  String
+  activity    Activity @relation(fields: [activityId], references: [id], onDelete: Cascade)
+  userId      String
+  user        User     @relation(fields: [userId], references: [id])
+}
+
+// ============ INVITES ============
+
+model Invite {
+  id          String   @id @default(cuid())
+  email       String
+  token       String   @unique
+  role        String   @default("viewer") // owner, viewer
+  expiresAt   DateTime
+  usedAt      DateTime?
+  createdAt   DateTime @default(now())
+
+  // Relations
+  clientId    String
+}

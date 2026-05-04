@@ -36,6 +36,14 @@ yarn-error.log*
 # vercel
 .vercel
 
+# claude code
+.claude/
+
+# local sqlite (we use Postgres on Neon)
+prisma/dev.db
+prisma/migrations/
+
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+.env*.local
